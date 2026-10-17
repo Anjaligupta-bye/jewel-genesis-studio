@@ -63,7 +63,7 @@ export function ScrollStory() {
     last.current = e.clientX;
   };
 
-  const s = STAGES[stage];
+  const s = STAGES[stage] ?? STAGES[0]!;
 
   return (
     <section id="story" ref={section} className="relative h-[320vh] bg-background" aria-label="From idea to creation">
