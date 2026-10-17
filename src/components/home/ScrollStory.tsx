@@ -35,7 +35,7 @@ export function ScrollStory() {
   useEffect(() => {
     setLite(window.matchMedia("(max-width: 768px), (pointer: coarse)").matches);
     setMode(webglAvailable() ? "3d" : "fallback");
-    const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setNear(true); io.disconnect(); } }, { rootMargin: "400px" });
+    const io = new IntersectionObserver(([e]) => { if (e?.isIntersecting) { setNear(true); io.disconnect(); } }, { rootMargin: "400px" });
     if (section.current) io.observe(section.current);
     return () => io.disconnect();
   }, []);
