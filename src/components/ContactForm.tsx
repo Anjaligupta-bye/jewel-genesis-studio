@@ -6,11 +6,11 @@ import { CONTACT } from "@/lib/contact-details";
 import { cn } from "@/lib/utils";
 
 // Set VITE_ENQUIRY_ENDPOINT to a form service URL (e.g. Formspree) or connect a backend to deliver enquiries.
-const ENDPOINT = import.meta.env.VITE_ENQUIRY_ENDPOINT as string | undefined;
+const ENDPOINT = import.meta.env["VITE_ENQUIRY_ENDPOINT"] as string | undefined;
 
 type Status = { kind: "idle" | "loading" | "success" | "error"; msg?: string };
 
-function Field({ id, label, optional, error, children }: { id: string; label: string; optional?: boolean; error?: string; children: ReactNode }) {
+function Field({ id, label, optional, error, children }: { id: string; label: string; optional?: boolean | undefined; error?: string | undefined; children: ReactNode }) {
   return (
     <div>
       <label htmlFor={id} className="mb-3 block text-[0.65rem] tracking-[0.25em] uppercase text-foreground/60">
@@ -27,7 +27,7 @@ const inputCls = (err?: string) =>
 
 export function ContactForm() {
   const [v, setV] = useState<Enquiry>(EMPTY_ENQUIRY);
-  const [errors, setErrors] = useState<Partial<Record<keyof Enquiry, string>>>({});
+  const [errors, setErrors] = useState<Partial<Record<keyof Enquiry, string | undefined>>>({});
   const [status, setStatus] = useState<Status>({ kind: "idle" });
 
   const set = (k: keyof Enquiry) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
