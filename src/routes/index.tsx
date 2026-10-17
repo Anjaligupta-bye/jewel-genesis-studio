@@ -1,24 +1,32 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { HeroVideo } from "@/components/home/HeroVideo";
+import { ScrollStory } from "@/components/home/ScrollStory";
+import { AboutSection } from "@/components/home/AboutSection";
+import { ProcessTimeline } from "@/components/home/ProcessTimeline";
+import { FinalCta } from "@/components/FinalCta";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "SAAVY CO. — From Your Idea to Finished Jewellery" },
+      { name: "description", content: "Global jewellery design, CAD and manufacturing partner. Designed in India. Built for the World." },
+      { property: "og:title", content: "SAAVY CO. — From Your Idea to Finished Jewellery" },
+      { property: "og:description", content: "Jewellery CAD, rendering, prototyping and manufacturing for brands and designers worldwide." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
+  component: Home,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function Home() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <HeroVideo />
+      <ScrollStory />
+      <AboutSection />
+      <ProcessTimeline />
+      <FinalCta title={<>Have an idea <em className="text-gold-gradient">worth creating?</em></>} text="Let's transform your jewellery concept into something exceptional." />
+    </>
   );
 }
