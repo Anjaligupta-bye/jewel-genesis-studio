@@ -39,7 +39,7 @@ export function ProcessTimeline() {
                 >
                   <span className="absolute top-0 left-0 h-[11px] w-[11px] rotate-45 border border-gold bg-espresso" />
                   <p className="font-display text-lg text-gold">{String(i + 1).padStart(2, "0")}</p>
-                  <h3 className="mt-1 font-display text-2xl tracking-wide uppercase">{t}</h3>
+                  <h3 className="mt-1 font-display text-lg tracking-wider uppercase xl:text-xl">{t}</h3>
                   <p className="mt-3 text-sm text-foreground/65">{d}</p>
                 </motion.li>
               ))}
