@@ -1,8 +1,9 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import video from "@/assets/saavy-flower-to-ring.mp4.asset.json";
-import poster from "@/assets/saavy-hero-poster.jpg.asset.json";
 import { CtaLink, EASE } from "@/components/ui-kit";
+const video = { url: "/saavy-flower-to-ring.mp4" };
+const poster = { url: "/saavy-hero-poster.jpg" };
+
 
 const LINES = [["FROM", "IMAGINATION"], ["TO", "CREATION."]];
 
