@@ -4,7 +4,7 @@ import { CONTACT } from "@/lib/contact-details";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-charcoal">
+    <footer className="border-t border-border bg-espresso">
       <div className="mx-auto grid max-w-[1440px] gap-12 px-6 py-20 md:grid-cols-3 md:px-10">
         <div>
           <p className="font-display text-3xl tracking-[0.25em]">SAAVY<span className="text-gold"> CO.</span></p>

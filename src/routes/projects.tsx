@@ -109,7 +109,7 @@ function Projects() {
       <AnimatePresence>
         {active && (
           <motion.div className="fixed inset-0 z-[60] flex items-center justify-center bg-background/90 p-4 backdrop-blur-md md:p-10" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setOpen(null)} role="dialog" aria-modal="true" aria-label={active.name}>
-            <motion.div className="relative grid max-h-full w-full max-w-6xl overflow-auto border border-border bg-charcoal md:grid-cols-2" onClick={(e) => e.stopPropagation()} initial={{ y: 30 }} animate={{ y: 0 }} exit={{ y: 30 }} transition={{ duration: 0.6, ease: EASE }}>
+            <motion.div className="relative grid max-h-full w-full max-w-6xl overflow-auto border border-border bg-espresso md:grid-cols-2" onClick={(e) => e.stopPropagation()} initial={{ y: 30 }} animate={{ y: 0 }} exit={{ y: 30 }} transition={{ duration: 0.6, ease: EASE }}>
               <motion.img layoutId={`img-${active.id}`} src={active.img} alt={active.name} className="aspect-square h-full w-full object-cover" />
               <div className="flex flex-col justify-center p-8 md:p-14">
                 <p className="eyebrow mb-4">Sample project</p>
