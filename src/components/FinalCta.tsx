@@ -8,7 +8,7 @@ const PARTICLES = Array.from({ length: 28 }, (_, i) => ({
   size: 1 + (i % 3),
 }));
 
-export function FinalCta({ title, text }: { title: ReactNode; text: string }) {
+export function FinalCta({ title, text, ctaLabel = "Start your project" }: { title: ReactNode; text: string; ctaLabel?: string }) {
   return (
     <section className="relative overflow-hidden" style={{ background: "var(--gradient-fade-gold)" }}>
       <div aria-hidden className="pointer-events-none absolute inset-0">
@@ -23,7 +23,7 @@ export function FinalCta({ title, text }: { title: ReactNode; text: string }) {
       <div className="relative mx-auto flex max-w-[1440px] flex-col items-center px-6 py-36 text-center md:px-10 lg:py-48">
         <Reveal><h2 className="font-display text-5xl leading-[1] font-light md:text-7xl lg:text-8xl">{title}</h2></Reveal>
         <Reveal delay={0.15}><p className="mt-8 max-w-lg text-foreground/80">{text}</p></Reveal>
-        <Reveal delay={0.3} className="mt-12"><CtaLink to="/contact">Start your project</CtaLink></Reveal>
+        <Reveal delay={0.3} className="mt-12"><CtaLink to="/contact">{ctaLabel}</CtaLink></Reveal>
       </div>
     </section>
   );

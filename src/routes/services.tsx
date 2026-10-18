@@ -37,7 +37,7 @@ function ServiceRow({ s, i }: { s: (typeof SERVICES)[number]; i: number }) {
   const y = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
   return (
     <Reveal>
-      <article tabIndex={0} className="group grid gap-8 border-t border-border py-12 outline-none md:grid-cols-12 md:items-center md:py-16 focus-visible:bg-charcoal">
+      <article tabIndex={0} className="group grid gap-8 border-t border-border py-12 outline-none md:grid-cols-12 md:items-center md:py-16 focus-visible:bg-espresso">
         <p className="font-display text-2xl text-gold md:col-span-1">{String(i + 1).padStart(2, "0")}</p>
         <div className="md:col-span-6">
           <h2 className="font-display text-4xl leading-none font-light uppercase transition-colors duration-500 group-hover:text-gold md:text-6xl">{s.t}</h2>
